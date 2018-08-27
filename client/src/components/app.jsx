@@ -1,17 +1,52 @@
 import React from 'react';
-import Header from './Header.jsx'
+import Header from './Header.jsx';
+import axios from 'axios';
+import ebKey from '../../../keys'
 
 class App extends React.Component {
   constructor (props){
     super(props);
     this.state = {
+      eventType: "",
+      location: "",
+      events:[],
     }
+  }
+
+  eventTypeChange = (e) => {
+    this.setState ({eventType: e.target.value}) 
+ }
+  locationChange = (e) => {
+    this.setState({location: e.target.value})
+ }
+
+  getEvents = () => {
+    axios.get('https://www.eventbriteapi.com/v3/events/search/', {
+      params: {
+        q: this.state.eventType,
+        sort_by: 'best',
+        'location.address': this.state.location,
+        'location.within': '15mi',
+        price:'free',
+        'start_date.keyword':'today',
+      },
+      headers: {
+        Authorization: `Bearer ${ebKey}`,
+      },
+    })
+      .then((response) => {
+        console.log(response.data)
+      })
+      .catch((error) => {
+        console.log(error);
+      })
+
   }
 
   render () {
     return (
       <div>
-        <Header />
+        <Header eventTypeChange={this.eventTypeChange} locationChange={this.locationChange} getEvents={this.getEvents}/>
       </div>
     )
   }
