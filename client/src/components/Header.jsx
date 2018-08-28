@@ -8,18 +8,18 @@ class Header extends React.Component {
     }
   }
 
-
-
-
   render () {
     return (
       <div>
-        <a href="localhost:1337">Moment</a>
-        <span>Find</span>
-        <input type="text" name="search" onChange={this.props.eventTypeChange}/>
-        <span>Location</span>
-        <input type="text" name="location" onChange={this.props.locationChange}/>
-        <button type="button" onClick={this.props.getEvents}>&#x1F50D;</button>
+        <div className="header">
+          <a href={window.location}><img src="./logo_transparent.png" alt="logo" height="32" width="32"/></a>
+          <span className="find">Find</span>
+          <input className="search-box" type="text" name="search" size="32" onChange={this.props.eventTypeChange}/>
+          <span className="location">Location</span>
+          <input className="location-box" type="text" name="location" size="32" onChange={this.props.locationChange}/>
+          <button className="search" type="button" onClick={this.props.getEvents}><img src ="./search.png" alt="search" height="15" width="15"/></button>
+        </div>
+        <hr className="line"/>
       </div>
     )
   }
