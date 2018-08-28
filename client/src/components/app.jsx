@@ -2,6 +2,7 @@ import React from 'react';
 import Header from './Header.jsx';
 import axios from 'axios';
 import ebKey from '../../../keys'
+import Event from './Event.jsx'
 
 class App extends React.Component {
   constructor (props){
@@ -35,7 +36,7 @@ class App extends React.Component {
       },
     })
       .then((response) => {
-        console.log(response.data)
+        this.setState({events:response.data});
       })
       .catch((error) => {
         console.log(error);
@@ -47,6 +48,11 @@ class App extends React.Component {
     return (
       <div>
         <Header eventTypeChange={this.eventTypeChange} locationChange={this.locationChange} getEvents={this.getEvents}/>
+        <div>
+          {this.state.events.map(event => {
+            return <Event event={event}/>
+          })}
+        </div>
       </div>
     )
   }
