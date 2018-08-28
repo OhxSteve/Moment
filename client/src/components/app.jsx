@@ -36,7 +36,7 @@ class App extends React.Component {
       },
     })
       .then((response) => {
-        this.setState({events:response.data});
+        this.setState({events:response.data.events});
       })
       .catch((error) => {
         console.log(error);
