@@ -1,0 +1,80 @@
+body {
+  font-family: "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif; 
+  font-weight: 300;
+}
+
+.home-logo {
+  position: relative;
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  width: 560px;
+  height: auto;
+  opacity: .5;
+}
+.line {
+  border-color:'rgb(0,0,0,.05)';
+  position: relative;
+  bottom: 7px;
+}
+
+.header {
+  font-size: 20px;
+}
+
+.search-box, .location-box{
+  line-height:1.5;
+}
+
+.find {
+  position: relative;
+  bottom:9px;
+  left: 5px;
+}
+.search-box {
+  position: relative;
+  bottom:11px;
+  left: 9px;
+}
+.location {
+  position: relative;
+  bottom:9px;
+  left: 22px;
+}
+.location-box {
+  position: relative;
+  bottom:11px;
+  left: 26px;
+}
+.search {
+  position: relative;
+  bottom:9px;
+  left: 26px;
+}
+
+.event-name {
+  position: relative;
+  bottom:101px;
+  left:215px;
+  text-decoration: none;
+  color: rgb(77, 76, 76);
+  font-size: 24px;
+}
+
+.event-time {
+  position: relative;
+  bottom:101px;
+  left:215px;
+  text-decoration: none;
+  color: rgb(77, 76, 76);
+  font-size: 18px;
+}
+
+.event-description {
+  position: relative;
+  bottom:45px;
+  text-decoration: none;
+  color: gray;
+  font-size: 14px;
+}
+

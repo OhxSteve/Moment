@@ -36,6 +36,7 @@ class App extends React.Component {
       },
     })
       .then((response) => {
+        console.log(window.location)
         this.setState({events:response.data.events});
       })
       .catch((error) => {
@@ -48,9 +49,12 @@ class App extends React.Component {
     return (
       <div>
         <Header eventTypeChange={this.eventTypeChange} locationChange={this.locationChange} getEvents={this.getEvents}/>
+        {!this.state.events.length &&
+        <img className="home-logo" src="./logo_transparent.png" alt="logo"/>
+        }
         <div>
           {this.state.events.map(event => {
-            return <Event event={event}/>
+            return <Event event={event} />
           })}
         </div>
       </div>
